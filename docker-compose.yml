@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./data.db
+      AI_DEMO_MODE: "true"
+      AI_API_KEY: ""
+      AI_BASE_URL: "https://api.openai.com/v1"
+      AI_MODEL: "gpt-4o-mini"
+    restart: unless-stopped
